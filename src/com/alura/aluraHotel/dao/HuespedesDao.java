@@ -22,7 +22,7 @@ public class HuespedesDao {
 	}
 
 	/**
-	 * Metódo guardar
+	 * Metódo guardar para la tabla de huespedes
 	 * 
 	 * @param huesped
 	 */
@@ -56,6 +56,9 @@ public class HuespedesDao {
 		}
 	}
 
+	/**
+	 * Metodo para actualizar la tabla de huespedes
+	 */
 	public int actualizar(Integer idHuesped, String nombre, String apellido, Date fechaNacimiento, String nacionalidad,
 			String telefono) {
 		try {
@@ -79,6 +82,12 @@ public class HuespedesDao {
 		}
 	}
 
+	/**
+	 * Metodo para elminar el registro de un huesped y su reserva
+	 * @param idHuesped
+	 * @param idReserva
+	 * @return
+	 */
 	public int eliminar(Integer idHuesped, String idReserva) {
 		try {
 			String sql = "DELETE FROM huespedes WHERE id = ?";
@@ -96,6 +105,10 @@ public class HuespedesDao {
 		}
 	}
 
+	/**
+	 * Metodo para eliminar la reserva
+	 * @param idReserva
+	 */
 	private void eliminarReserva(String idReserva) {
 		String sql = "DELETE FROM reserva WHERE id = ?";
 		try {
@@ -110,6 +123,10 @@ public class HuespedesDao {
 		}
 	}
 
+	/**
+	 * Metodo para listar los huespedes
+	 * @return
+	 */
 	public List<Huespedes> listar() {
 		List<Huespedes> listaHuespedes = new ArrayList<>();
 		String sql = "SELECT id, nombre, apellido, fecha_nacimiento, nacionalidad, telefono, id_reserva "
@@ -134,6 +151,11 @@ public class HuespedesDao {
 		}
 	}
 	
+	/**
+	 * Metodo para buscar por apellido a un huesped
+	 * @param apellido
+	 * @return
+	 */
     public List<Huespedes> listar(String apellido) {
         List<Huespedes> listaHuespedes = new ArrayList<>();
         try {

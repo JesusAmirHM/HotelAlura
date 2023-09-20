@@ -1,5 +1,9 @@
 package com.alura.aluraHotel.util;
 
+/**
+ * Convertidor de fechas
+ */
+
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;

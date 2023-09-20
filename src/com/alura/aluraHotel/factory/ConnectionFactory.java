@@ -1,5 +1,9 @@
 package com.alura.aluraHotel.factory;
 
+/**
+ * Creando la conexión con la base de datos
+ */
+
 import java.sql.Connection;
 import java.sql.SQLException;
 

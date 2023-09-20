@@ -14,9 +14,6 @@ public class ReservaController {
 	 public ReservaController() {
 	        this.reservaDao = new ReservaDao(new ConnectionFactory().recuperaConexion());
 	    }
-	 
-
-
 	
 	 public List<Reserva> listar() {
 	        return reservaDao.listar();

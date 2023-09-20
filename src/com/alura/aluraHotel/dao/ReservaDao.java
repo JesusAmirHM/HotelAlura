@@ -54,6 +54,15 @@ public class ReservaDao {
 	        }
 	    }
 	 
+	/**
+	 * Metodo para actualizar la reserva
+	 * @param idReserva
+	 * @param fechaEntrada
+	 * @param fechaSalida
+	 * @param valorReserva
+	 * @param formaPago
+	 * @return
+	 */
 	 public int actualizar(String idReserva, Date fechaEntrada,
 	            Date fechaSalida, double valorReserva, String formaPago) {
 	        try {
@@ -75,7 +84,11 @@ public class ReservaDao {
 	            throw new RuntimeException(e);
 	        }
 	    }
-	 
+		
+		/**
+		 * Metodo para listar las reservas
+		 * @return
+		 */
 	    public List<Reserva> listar() {
 	        List<Reserva> listarReservas = new ArrayList<>();
 	        try {
@@ -101,6 +114,11 @@ public class ReservaDao {
 	        }
 	    }
 	 
+		/**
+		 * Metodo para buscar una reserva por id
+		 * @param idReserva
+		 * @return
+		 */
 	    public List<Reserva> listar(String idReserva) {
 	        List<Reserva> listaReservas = new ArrayList<>();
 	        String sql = "SELECT\n"
@@ -136,6 +154,10 @@ public class ReservaDao {
 	        
 	    }
 
+		/**
+		 * Metodo para obtener la ultima reserva
+		 * @return
+		 */
 	    public int obtenerId() {
 	    	int maxId = 0;
 	    	try {

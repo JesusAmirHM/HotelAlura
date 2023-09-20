@@ -418,7 +418,7 @@ public class Busqueda extends JFrame {
 	private void actualizarHuesped() {
 		int fila = tbHuespedes.getSelectedRow();
 		if (fila < 0) {
-			JOptionPane.showMessageDialog(null, "No ha seleccionado ninguna fila.");
+			JOptionPane.showMessageDialog(null, "Seleccione una fila.");
 		} else {
 			Integer idHuesped = Integer.valueOf(tbHuespedes.getValueAt(fila, 0).toString());
 			String nombre = String.valueOf(tbHuespedes.getValueAt(fila, 1));
@@ -433,7 +433,7 @@ public class Busqueda extends JFrame {
 						lineasActualizadas = this.huespedesController.actualizar(idHuesped, nombre, apellido, fechaNac,
 								nacionalidad, telefono);
 						JOptionPane.showMessageDialog(null,
-								lineasActualizadas + " " + "registro actualizado éxitosamente.",
+								lineasActualizadas + " " + "actualizado éxitosamente.",
 								"Actualización éxitosa.", JOptionPane.INFORMATION_MESSAGE);
 					});
 		}
